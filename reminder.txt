@@ -1,0 +1,11 @@
+
+rax : return
+rdi : param 1
+rsi : param 2
+rdx : param 3
+
+
+r8 : param 5
+r9 : param 6
+r10 : param 7
+
