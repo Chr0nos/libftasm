@@ -1,18 +1,18 @@
-Parameters registers
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+# Parameters registers
 |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | rdi | rsi | rdx |     | r8  | r9  | r10 | r11 |
 
 
-Functions registers
-| :---: |:-------|
+# Functions registers
 |  Call | Return |
+| :---: |:-------|
 |  rsp  |   rax  |
 
 
-Keywords
-|:--------:|:------------------------------------------------------------------|
+# Keywords
 |   Word   | Sigification                                                      |
+|:--------:|:------------------------------------------------------------------|
 |   mov    | copy param 2 value to param 1 register                            |
 |   cld    | clear the "direction" flag                                        |
 |   jmp    | perform a "jump" in the code, take the address where to jump in param |
