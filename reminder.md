@@ -46,8 +46,9 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 |   jmp    | perform a "jump" in the code, take the address where to jump in param |
 |   push   | push (add) the given register value on the stack                  |
 |   pop    | pop (remove) the given register from stack                        |
-|   leave  |                                                                   |
-|   ret    |                                                                   |
+|   enter  | push the fonction on the stack                                    |
+|   leave  | pop the function out of the stack                                 |
+|   ret    | return                                                            |
 |   rep    |                                                                   |
 |   add    | add param2 to param1                                              |
 |   sub    | substract param2 from param1                                      |
@@ -55,7 +56,6 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 |   inc    | increment                                                         |
 |   dec    | decrement                                                         |
 |   not    | equivalent ot ~register                                           |
-
 
 ## ressources
 http://www.lacl.fr/tan/asm
