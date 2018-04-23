@@ -7,9 +7,26 @@
 
 
 ## Functions registers
-|  Call | Return | Loop counter |
-| :---: |:-------| :----------- |
-|  rsp  |   rax  | rcx          |
+|  Call | Return | Loop counter | Instruction pointer |
+| :---: |:-------| :----------- | :------------------ |
+|  rsp  |   rax  | rcx          | rip
+
+## Registers utility
+| register | Utility                                                           |
+| :------: | :---------------------------------------------------------------- |
+| rsp      | Stack pointer                                                     |
+| rbp      | Base Stack Pointer                                                |
+| r1-15    | Multi purposes general registers                                  |
+| rcx      | Loop counter                                                      |
+| rdi      | Comparaison destination                                           |
+| rsi      | Comparaison/moving source                                         |
+
+## Syscall
+For MAC OS the prefix is 0x2000000
+
+for LINUX the prefix is 0x1000000
+
+to perform a syscall the address of systemcall has to be set into "rax" register
 
 ## Registers size
 | Size        | Registers                                                |
