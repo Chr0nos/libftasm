@@ -6,7 +6,7 @@
 #    By: snicolet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/14 22:57:10 by snicolet          #+#    #+#              #
-#    Updated: 2018/04/30 20:58:13 by snicolet         ###   ########.fr        #
+#    Updated: 2018/04/30 22:30:28 by snicolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=libftasm.a
 BUILDIR=./build
 SRCDIR=./srcs/
 ARCH=macho64
-SRCS=ft_bzero.s ft_strcat.s
+SRCS=ft_bzero.s ft_strcat.s ft_strlen.s ft_isalpha.s ft_islower.s ft_isupper.s
 
 OBJS=$(SRCS:%.s=$(BUILDIR)/%.o)
 

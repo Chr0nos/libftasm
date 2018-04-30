@@ -23,7 +23,7 @@ _ft_strcat:
 		mov [rdx], r8
 		inc rdx
 		inc rsi
-		jp .copy
+		jmp .copy
 
 	.end:
 		; adding \0 at the end of dest

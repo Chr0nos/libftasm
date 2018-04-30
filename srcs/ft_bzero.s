@@ -15,7 +15,7 @@ _ft_bzero:
 		; statement: setting 0 to the address and reenter into the loop
 		mov byte[rdi + rdx], 0
 		inc rdx
-		jp .loop
+		jmp .loop
 
 	; removing the function from the stack
 	.quit:
