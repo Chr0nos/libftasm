@@ -6,7 +6,7 @@
 /*   By: snicolet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 18:49:44 by snicolet          #+#    #+#             */
-/*   Updated: 2018/04/30 22:56:00 by snicolet         ###   ########.fr       */
+/*   Updated: 2018/04/30 23:03:14 by snicolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
 
 #endif

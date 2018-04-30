@@ -6,7 +6,7 @@
 #    By: snicolet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/14 22:57:10 by snicolet          #+#    #+#              #
-#    Updated: 2018/04/30 22:55:52 by snicolet         ###   ########.fr        #
+#    Updated: 2018/04/30 23:03:48 by snicolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ BUILDIR=./build
 SRCDIR=./srcs/
 ARCH=macho64
 SRCS=ft_bzero.s ft_strcat.s ft_strlen.s ft_isalpha.s ft_islower.s ft_isupper.s \
-	 ft_isdigit.s ft_isprint.s
+	 ft_isdigit.s ft_isprint.s ft_toupper.s
 
 OBJS=$(SRCS:%.s=$(BUILDIR)/%.o)
 
