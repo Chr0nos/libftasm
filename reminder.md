@@ -58,4 +58,15 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 |   not    | equivalent ot ~register                                           |
 
 ## ressources
+### General documentation
 http://www.lacl.fr/tan/asm
+
+### Comparaisons
+http://unixwiz.net/techtips/x86-jumps.html
+
+### Calling conventions
+https://wiki.osdev.org/System_V_ABI 
+
+### Repstring operations
+https://www.csc.depauw.edu/~bhoward/asmtut/asmtut7.html
+
