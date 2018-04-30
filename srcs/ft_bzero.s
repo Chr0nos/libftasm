@@ -1,4 +1,4 @@
-section TEXT align=16
+section .text align=16
 	global ft_bzero
 
 ;             (rdi, rsi)
