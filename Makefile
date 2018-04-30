@@ -6,7 +6,7 @@
 #    By: snicolet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/14 22:57:10 by snicolet          #+#    #+#              #
-#    Updated: 2018/04/30 19:50:23 by snicolet         ###   ########.fr        #
+#    Updated: 2018/04/30 20:58:13 by snicolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,15 @@ $(BUILDIR)/%.o: $(SRCDIR)%.s
 	nasm -f $(ARCH) $< -o $@
 
 $(NAME): $(BUILDIR) $(OBJS)
-	ld $(OBJS) -o $(NAME)
+	ar rc $(NAME) $(OBJS)
 
+clean:
+	$(RM) -r $(BUILDIR)
 
-test:
-	nasm -f macho64 test.s
-	ld test.o
-	./a.out
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+test: $(NAME)
+	clang -Wall -Werror -Wextra main.c -o test -L. -lftasm -I.

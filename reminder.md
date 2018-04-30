@@ -3,7 +3,7 @@
 ## Parameters registers
 |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| rdi | rsi | rdx |     | r8  | r9  | r10 | r11 |
+| rdi | rsi | rdx | rcx | r8  | r9  | r10 | r11 |
 
 
 ## Functions registers
@@ -56,6 +56,8 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 |   inc    | increment                                                         |
 |   dec    | decrement                                                         |
 |   not    | equivalent ot ~register                                           |
+|   cld    | flag of repeatstring operator (set to "not finished")             |
+|   lea    | load effective address : mov with arithmetic                      | 
 
 ## ressources
 ### General documentation
@@ -70,3 +72,8 @@ https://wiki.osdev.org/System_V_ABI
 ### Repstring operations
 https://www.csc.depauw.edu/~bhoward/asmtut/asmtut7.html
 
+### Pointers operations
+https://stackoverflow.com/questions/43769467/x86-assembly-pointers
+
+### Basics notions
+http://beta.hackndo.com/assembleur-notions-de-base/
