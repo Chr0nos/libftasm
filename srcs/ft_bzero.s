@@ -1,9 +1,23 @@
 section TEXT align=16
-	global _ft_bzero
+	global ft_bzero
 
+;             (rdi, rsi)
 ;void ft_bzero(void *s, size_t n);
-_ft_bzero:
-	push rsp		; mise de rsp sur la stack
-	mov rbp, rsp	; copie de rsp dans rbp
-	
-	pop rsp			; remise de la valeur originele de rsp
+ft_bzero:
+	push rbp
+	mov rbp, rsp
+
+	; creating a loop counter into rdx
+	mov rdx, 0
+	.loop:
+		cmp rdx, rsi
+		jge .quit
+		; statement: setting 0 to the address and reenter into the loop
+		.stmt:
+			mov byte[rdi + rdx], 0
+			jp .loop
+
+	; removing the function from the stack
+	.quit:
+		pop rbp
+		ret
