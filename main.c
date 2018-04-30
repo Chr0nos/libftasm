@@ -36,18 +36,18 @@ static void		test_ft_strcat(void)
 
 static void		test_isall(void)
 {
-	int			tests[10] = {'a', 'G', 'b', '?', 'h', '0', '9', '5', '\0', 0xff};
+	int			tests[11] = {'a', 'A', 'G', 'b', '?', 'h', '0', '9', '5', '\0', 0xff};
 	int			p;
 	char		c;
 
 	printf("%s", "testing for ft_is*...\n");
 	p = 0;
-	while  (p < 10)
+	while  (p < 11)
 	{
 		c = (char)tests[p++];
-		printf("char: %c - ft_islower: %d - ft_isupper: %d - ft_isalpha: %d - ft_isdigit: %d - ft_isprint: %d - ft_toupper: %c\n",
+		printf("char: %c - ft_islower: %d - ft_isupper: %d - ft_isalpha: %d - ft_isdigit: %d - ft_isprint: %d - ft_toupper: %c - ft_tolower: %c\n",
 				c, ft_islower(c), ft_isupper(c), ft_isalpha(c), ft_isdigit(c),
-				ft_isprint(c), (char)ft_toupper(c));
+				ft_isprint(c), (char)ft_toupper(c), (char)ft_tolower(c));
 	}
 	printf("%s", "test done.\n");
 }
