@@ -60,11 +60,24 @@ static void		test_ft_strlen(void)
 	printf("%s -> %lu\n", str, ft_strlen(str));
 }
 
+static void		test_ft_memset(void)
+{
+	int			buffa[100];
+	int			buffb[100];
+
+	printf("%s", "testing ft_memset...\n");
+	memset(buffa, 0xfa, sizeof(int) * 100);
+	ft_memset(buffb, 0xfa, sizeof(int) * 100);
+	printf("test0: %s\n",
+			(memcmp(buffa, buffb, sizeof(int) * 100)) ? "Failed" : "Success");
+}
+
 int				main(void)
 {
 	test_ft_bzero();
 	test_ft_strcat();
 	test_isall();
 	test_ft_strlen();
+	test_ft_memset();
 	return (0);
 }
