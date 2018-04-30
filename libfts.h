@@ -6,7 +6,7 @@
 /*   By: snicolet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 18:49:44 by snicolet          #+#    #+#             */
-/*   Updated: 2018/04/30 23:13:37 by snicolet         ###   ########.fr       */
+/*   Updated: 2018/05/01 00:34:37 by snicolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+size_t			ft_strlen(const char *src);
 
 #endif

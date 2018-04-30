@@ -21,8 +21,7 @@ static void		test_ft_bzero(void)
 	printf("ft_bzero: %s\n", (is_zero(test, 100) ? "failed" : "passed"));
 }
 
-
-static void		test_ft_strcat(void)
+static void		test_ft_strcat()
 {
 	char		buffer[200];
 
@@ -52,10 +51,20 @@ static void		test_isall(void)
 	printf("%s", "test done.\n");
 }
 
+static void		test_ft_strlen(void)
+{
+	const char		*str;
+
+	printf("%s", "testing for ft_strlen...\n");
+	str = "hello world";;
+	printf("%s -> %lu\n", str, ft_strlen(str));
+}
+
 int				main(void)
 {
 	test_ft_bzero();
 	test_ft_strcat();
 	test_isall();
+	test_ft_strlen();
 	return (0);
 }

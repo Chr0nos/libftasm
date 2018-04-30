@@ -1,5 +1,6 @@
 section .text align=16
 	global _ft_strcat
+	extern _ft_strlen
 
 ;					rdi			rsi
 ;char	*ft_strcat(char *dest, const char *src);
@@ -8,14 +9,14 @@ _ft_strcat:
 	mov rbp, rsp
 
 	.seek:
-		; storing destination pointer to the end
-		mov rdx, rdi
-		cmp byte[rdx], 0
-		je .copy
-		inc rdx
+		; seeks for the dest last pointer
+		mov r8, rdi			; backup of rdi
+		call _ft_strlen		; calling ft_strlen
+		mov rdx, r8			; putting the destination begin to rdx
+		add rdx, rax		; seek with the strlen return
 
 	.copy:
-		; performs the real copy
+		; performs the real copy to rdx from rsi
 		; destination is in rdx pointer
 		cmp byte[rsi], 0
 		je .end

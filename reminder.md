@@ -59,6 +59,25 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 |   cld    | flag of repeatstring operator (set to "not finished")             |
 |   lea    | load effective address : mov with arithmetic                      | 
 
+# Repstring
+## Rep
+Before use, set the loop direction (with cld)
+
+| rdi                     | rcx               | rax/eax/ax/al                  |
+| source string pointer   | counter register  | value to compare with
+
+| Instruction | Description                                                    |
+| :---------- | :------------------------------------------------------------- |
+| repne       | loop until not equal to rax (see scas)                         |
+
+## Scas
+| Param    | Read register                                                     |
+| :------: | :---------------------------------------------------------------- |
+| scasb    | al                                                                |
+| scasw    | ax                                                                |
+| scasd    | eax                                                               |
+| scasq    | rax                                                               |
+
 ## ressources
 ### General documentation
 http://www.lacl.fr/tan/asm
