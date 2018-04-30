@@ -70,13 +70,17 @@ Before use, set the loop direction (with cld)
 | :---------- | :------------------------------------------------------------- |
 | repne       | loop until not equal to rax (see scas)                         |
 
-## Scas
+## Scas / Movs
 | Param    | Read register                                                     |
 | :------: | :---------------------------------------------------------------- |
 | scasb    | al                                                                |
 | scasw    | ax                                                                |
 | scasd    | eax                                                               |
 | scasq    | rax                                                               |
+| movs     |                                                                   |
+| mosw     |                                                                   |
+| movsd    |                                                                   |
+| movsq    |                                                                   |
 
 ## ressources
 ### General documentation

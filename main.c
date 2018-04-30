@@ -72,6 +72,17 @@ static void		test_ft_memset(void)
 			(memcmp(buffa, buffb, sizeof(int) * 100)) ? "Failed" : "Success");
 }
 
+static void		test_ft_memcpy(void)
+{
+	int		abuff[100];
+	int		bbuff[100];
+
+	printf("%s", "testing ft_memcpy...\n");
+	ft_memcpy(bbuff, abuff, sizeof(int) *  100);
+	printf("test0: %s\n",
+			memcmp(abuff, bbuff, sizeof(int) * 100) ? "Failed" : "Success");
+}
+
 int				main(void)
 {
 	test_ft_bzero();
@@ -79,5 +90,6 @@ int				main(void)
 	test_isall();
 	test_ft_strlen();
 	test_ft_memset();
+	test_ft_memcpy();
 	return (0);
 }
