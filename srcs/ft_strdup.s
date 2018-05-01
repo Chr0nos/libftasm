@@ -1,7 +1,6 @@
 section .text align=16
 	global _ft_strdup
 	extern _ft_strlen
-;	extern _ft_memcpy
 	extern _ft_strcpy
 	extern _malloc
 
@@ -23,8 +22,8 @@ _ft_strdup:
 	je .quit
 
 	;char* ft_strcpy(char *dst, const char *src);
-	mov rdi, rax
-	mov rsi, rcx
+	mov rdi, rax			; rax contains malloc return
+	mov rsi, rcx			; rsi contains copy of src
 	call _ft_strcpy
 
 	;rax is already on dst
