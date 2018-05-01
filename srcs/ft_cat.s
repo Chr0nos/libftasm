@@ -29,7 +29,7 @@ _ft_cat:
 		syscall
 		cmp rax, 0				; checking if read worked
 		jl .quit
-		je .event
+		je .quit
 		mov r15, rax			; storing read size in rax
 	
 		; ssize_t write(int fd, void *ptr, size_t size);
