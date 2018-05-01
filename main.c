@@ -114,6 +114,7 @@ int				main(void)
 	test_ft_memcpy();
 	ft_puts("testing puts");
 	test_ft_strcpy();
+	printf("hiii\n");
 	test_ft_strdup();
 	return (0);
 }
