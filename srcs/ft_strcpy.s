@@ -6,7 +6,7 @@ section .text align=16
 _ft_strcpy:
 	push rbp				; backup of rbp on the stack
 	mov rbp, rsp			; adding this function in rbp
-	mov r8, rsi				; adding (src) to r8
+	mov r8, rdi				; adding (dest) to r8
 
 	.copy:
 		mov al, [rsi]
