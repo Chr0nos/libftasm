@@ -9,21 +9,22 @@ section .text align=16
 _ft_strdup:
 	push rbp
 	mov rbp, rsp
-	mov rcx, rdi
+	mov r15, rdi
 
 	; size_t ft_strlen(char *src);
 	call _ft_strlen
 	mov r8, rax				; storing the len into r8
 
 	; void *malloc(size_t size);
-	lea rdi, [rax + 1]		; adding 1 to the len of the string for malloc
+	inc rax					; adding 1 to the len of the string for malloc
+	mov rdi, rax			; passing the len to malloc
 	call _malloc			; allocated pointer is in rax
 	cmp rax, 0				; checking for malloc failure
 	je .quit
 
 	;char* ft_strcpy(char *dst, const char *src);
 	mov rdi, rax			; rax contains malloc return
-	mov rsi, rcx			; rsi contains copy of src
+	mov rsi, r15			; rsi contains copy of src
 	call _ft_strcpy
 
 	;rax is already on dst
