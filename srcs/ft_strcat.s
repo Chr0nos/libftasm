@@ -7,6 +7,7 @@ section .text align=16
 _ft_strcat:
 	push rbp
 	mov rbp, rsp
+	push rdi
 
 	.seek:
 		; seeks for the dest last pointer
@@ -32,6 +33,6 @@ _ft_strcat:
 		
 	.quit:
 		; prepairing return value
-		mov rax, rdi
+		pop rax
 		pop rbp
 		ret

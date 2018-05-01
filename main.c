@@ -110,14 +110,28 @@ static void		test_ft_cat(void)
 {
 	int		fd;
 
-	ft_puts("testing ft_cat...\n");
+	ft_puts("testing ft_cat...");
 	fd = open("main.c", O_RDONLY);
 	if (fd < 0)
 		return ;
 	ft_cat(fd);
+	close(fd);
 	ft_puts("--------------------\n");
 	ft_cat(STDIN_FILENO);
-	close(fd);
+	ft_cat(-1);
+}
+
+static void		test_ft_strchr(void)
+{
+	const char	*str = "i love poneys";
+	char		*ptr;
+
+	ft_puts("testing ft_strchr...");
+	ptr = ft_strchr((char*)(size_t)str, 'p');
+	printf("test0: %s\n", ptr);
+
+	ptr = ft_strchr((char*)(size_t)str, '\0');
+	printf("test1: %s\n", ptr);
 }
 
 int				main(void)
@@ -133,5 +147,7 @@ int				main(void)
 	printf("hiii\n");
 	test_ft_strdup();
 	test_ft_cat();
+	ft_puts("--- BONUS PART ---");
+	test_ft_strchr();
 	return (0);
 }
