@@ -9,7 +9,7 @@ section .text align=16
 _ft_strdup:
 	push rbp
 	mov rbp, rsp
-	mov r15, rdi
+	mov r15, rdi			; putting src in r15
 
 	; size_t ft_strlen(char *src);
 	call _ft_strlen
