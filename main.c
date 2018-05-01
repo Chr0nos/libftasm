@@ -83,6 +83,27 @@ static void		test_ft_memcpy(void)
 			memcmp(abuff, bbuff, sizeof(int) * 100) ? "Failed" : "Success");
 }
 
+static void		test_ft_strdup(void)
+{
+	char		*ptr;
+
+	ft_puts("testing ft_strdup...");
+	ptr = ft_strdup("i like poneys too");
+	printf("%p\n", ptr);
+	ft_puts(ptr);
+	free(ptr);
+	ft_puts("test passed");
+}
+
+static void		test_ft_strcpy(void)
+{
+	char		buffer[20];
+
+	ft_puts("testing ft_strcpy...");
+	ft_strcpy(buffer, "hello world !");
+	ft_puts(buffer);
+}
+
 int				main(void)
 {
 	test_ft_bzero();
@@ -92,6 +113,7 @@ int				main(void)
 	test_ft_memset();
 	test_ft_memcpy();
 	ft_puts("testing puts");
-	ft_puts(NULL);
+	test_ft_strcpy();
+	test_ft_strdup();
 	return (0);
 }
