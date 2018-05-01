@@ -1,4 +1,4 @@
-%define SYSCALL(x)	0x200000 | x
+%define SYSCALL(x)	0x2000000 | x
 %define READ		3
 %define WRITE		4
 %define STDOUT		1
@@ -15,9 +15,9 @@ _ft_cat:
 	push rbp
 	mov rbp, rsp
 
-	mov r8, rdi					; storing fd in r8
-	cmp r8, 0					; checking for < 0
+	cmp rdi, 0					; if fd < 0 : quit
 	jl .quit
+	mov r8, rdi					; storing fd in r8
 
 	; event is the case of a valid fd
 	.event:
