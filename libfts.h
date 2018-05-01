@@ -6,7 +6,7 @@
 /*   By: snicolet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 18:49:44 by snicolet          #+#    #+#             */
-/*   Updated: 2018/05/01 01:20:12 by snicolet         ###   ########.fr       */
+/*   Updated: 2018/05/01 01:53:45 by snicolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int				ft_tolower(int c);
 size_t			ft_strlen(const char *src);
 void			*ft_memset(void *dst, int c, size_t size);
 void			*ft_memcpy(void *dst, const void *src, size_t size);
+int				ft_puts(const char *src);
 
 #endif

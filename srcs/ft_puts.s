@@ -1,12 +1,14 @@
-%define SYSCALL	0x2000000 | x
+%define SYSCALL(x)	0x2000000 | x
 %define WRITE 4
 %define STDOUT 1
+
+section .data
+	eol db 10 ; '\n'
+	nul db '(null)', 0
 
 section .text align=16
 	global _ft_puts
 	extern _ft_strlen
-
-section .data
 
 ;                   rdi
 ;int		ft_puts(const char *s);
@@ -15,27 +17,31 @@ _ft_puts:
 	mov rbp, rsp
 	; protecton against NULL
 	cmp rdi, 0
-	je .quit
-	; valid string
-	; storing len into rcx
-	call _ft_strlen
-	mov rcx, rax
-	; backup of rdi
-	mov r8, rdi
+	jne .valid
+	lea rdi, [rel nul]
 
-	.write:
-		; ssize_t write(int fd, const char *src, size_t len);
-		mov rax, SYSCALL(WRITE)
-		mov rdi, STDOUT
-		mov rsi, r8
-		mov rdx, rcx
-		syscall
+	.valid:
+		mov r15, rdi
+		.len:
+			call _ft_strlen
+			push rax
+			mov r8, rax
 
-	.newline:
-		mov rax, SYSCALL(WRITE)
-		mov rdi, STDOUT
-		mov rsi
+		.write:
+			;ssize_t write(int fd, const void *src, size_t size);
+			mov rax, SYSCALL(WRITE)
+			mov rdi, STDOUT
+			mov rsi, r15
+			mov rdx, r8
+			syscall
+
+		.newline:
+			mov rax, SYSCALL(WRITE);
+			lea rsi, [rel eol]
+			mov rdx, 1
+			syscall
 
 	.quit:
+		pop rax
 		pop rbp
 		ret

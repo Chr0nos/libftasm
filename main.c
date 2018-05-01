@@ -91,5 +91,7 @@ int				main(void)
 	test_ft_strlen();
 	test_ft_memset();
 	test_ft_memcpy();
+	ft_puts("testing puts");
+	ft_puts(NULL);
 	return (0);
 }
