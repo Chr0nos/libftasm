@@ -1,6 +1,8 @@
 #include "libfts.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 static int		is_zero(const void *ptr, const size_t size)
 {
@@ -104,6 +106,20 @@ static void		test_ft_strcpy(void)
 	ft_puts(buffer);
 }
 
+static void		test_ft_cat(void)
+{
+	int		fd;
+
+	ft_puts("testing ft_cat...\n");
+	fd = open("main.c", O_RDONLY);
+	if (fd < 0)
+		return ;
+	ft_cat(fd);
+	ft_puts("--------------------\n");
+	ft_cat(STDIN_FILENO);
+	close(fd);
+}
+
 int				main(void)
 {
 	test_ft_bzero();
@@ -116,5 +132,6 @@ int				main(void)
 	test_ft_strcpy();
 	printf("hiii\n");
 	test_ft_strdup();
+	test_ft_cat();
 	return (0);
 }

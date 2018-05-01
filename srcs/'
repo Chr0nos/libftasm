@@ -1,0 +1,46 @@
+%define SYSCALL(x) 0x200000 | x
+%define READ 3
+%define WRITE 4
+%define STDIN 0
+%define BUFF_SIZE 2048
+
+section .bss align=16
+	buffer resb BUFF_SIZE
+
+section .text align=16
+	global _ft_cat
+
+;void	ft_cat(const int fd);
+_ft_cat:
+	push rbp
+	mov rbp, rsp
+
+	cmp rdi, 0		; checking for < 0
+	jge .event
+	jmp .quit
+
+	; event is the case of a valid fd
+	.event:
+		mov r8, rsi				; storing fd in r8
+
+		; ssize_t read(int fd, void * ptr, size_t size);
+		mov rax, SYSCALL(READ)
+		mov rdi, STDIN
+		mov rsi, [rel buffer]
+		mov rdx, BUFF_SIZE
+		syscall
+		mov r15, rax			; storing read size in rax
+		cmp r15, 0				; checking if read worked
+		je .event				; if == 0 then redo an other read
+		jl .quit				; of < 0 quit
+
+		; ssize_t write(int fd, void *ptr, size_t size);
+		mov rax, SYSCALL(WRITE)
+		mov rdi, r8
+		mov rdx, r15
+		syscall
+		jmp .event
+
+	.quit:
+		pop rbp
+		ret

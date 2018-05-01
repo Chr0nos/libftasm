@@ -6,7 +6,7 @@
 #    By: snicolet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/14 22:57:10 by snicolet          #+#    #+#              #
-#    Updated: 2018/05/01 03:58:46 by snicolet         ###   ########.fr        #
+#    Updated: 2018/05/01 19:17:37 by snicolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCDIR=./srcs/
 ARCH=macho64
 SRCS=ft_bzero.s ft_strcat.s ft_strlen.s ft_isalpha.s ft_islower.s ft_isupper.s \
 	 ft_isdigit.s ft_isprint.s ft_toupper.s ft_tolower.s ft_strlen.s \
-	 ft_memset.s ft_memcpy.s ft_puts.s ft_strdup.s ft_strcpy.s
+	 ft_memset.s ft_memcpy.s ft_puts.s ft_strdup.s ft_strcpy.s ft_cat.s
 
 OBJS=$(SRCS:%.s=$(BUILDIR)/%.o)
 
