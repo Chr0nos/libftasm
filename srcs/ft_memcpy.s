@@ -10,7 +10,7 @@ _ft_memcpy:
 
 	mov rcx, rdx
 	cld
-	movsb
+	rep movsb
 
 	pop rax
 	pop rbp
