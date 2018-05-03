@@ -4,7 +4,7 @@ section .text align=16
 
 ;char	*ft_strrchr(char *src, int c);
 _ft_strrchr:
-	mov r8, rdi							; backup original src in r8
+	mov r8b, rdi						; backup original src in r8
 	call _ft_strlen
 	cmp rax, 0
 	je .quit
@@ -20,7 +20,7 @@ _ft_strrchr:
 		cmp BYTE [rdi], sil				; read char and cmp with c
 		je .found
 		dec rdi							; go to previous char
-		cmp rdi, r8						; check if ptr < src
+		cmp BYTE [rdi], r8b				; check if ptr < src
 		jge .loop						; if not then next loop iteration
 
 	.found:
