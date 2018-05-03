@@ -21,8 +21,8 @@ _ft_strcat:
 		; destination is in rdx pointer
 		cmp byte[rsi], 0
 		je .end
-		mov r8, [rsi]
-		mov [rdx], r8
+		mov r8b, [rsi]
+		mov [rdx], r8b
 		inc rdx
 		inc rsi
 		jmp .copy

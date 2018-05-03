@@ -46,9 +46,12 @@ static void		test_isall(void)
 	while  (p < 11)
 	{
 		c = (char)tests[p++];
-		printf("char: %c - ft_islower: %d - ft_isupper: %d - ft_isalpha: %d - ft_isdigit: %d - ft_isprint: %d - ft_toupper: %c - ft_tolower: %c\n",
+		printf("char: %c - ft_islower: %d - ft_isupper: %d - ft_isalpha: %d"
+			   " - ft_isdigit: %d - ft_isprint: %d - ft_toupper: %c"
+			  	" - ft_tolower: %c - is_ascii: %d\n",
 				c, ft_islower(c), ft_isupper(c), ft_isalpha(c), ft_isdigit(c),
-				ft_isprint(c), (char)ft_toupper(c), (char)ft_tolower(c));
+				ft_isprint(c), (char)ft_toupper(c), (char)ft_tolower(c),
+				ft_isascii(c));
 	}
 	printf("%s", "test done.\n");
 }

@@ -4,13 +4,15 @@
 section .text align=16
 	global _ft_isascii
 
+;					rdi
+;int	ft_isascii(int c);
 _ft_isascii:
 	push rbp
 	mov rbp, rsp
-	cmp sil, ASCII_MIN
+	cmp rdi, ASCII_MIN
 	jl .failed
-	cmp sil, ASCII_MAX
-	jg .quit
+	cmp rdi, ASCII_MAX
+	jg .failed
 	mov rax, 1
 	jmp .quit
 
