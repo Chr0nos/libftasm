@@ -16,8 +16,8 @@ _ft_strdup:
 	mov r8, rax				; storing the len into r8
 
 	; void *malloc(size_t size);
-	inc rax					; adding 1 to the len of the string for malloc
-	mov rdi, rax			; passing the len to malloc
+	mov rdi, r8				; passing the len to malloc
+	inc rdi					; adding 1 for malloc '\0'
 	call _malloc			; allocated pointer is in rax
 	cmp rax, 0				; checking for malloc failure
 	je .quit
@@ -28,7 +28,6 @@ _ft_strdup:
 	call _ft_strcpy
 
 	;rax is already on dst
-
 	.quit:
 		pop rbp
 		ret

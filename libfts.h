@@ -6,7 +6,7 @@
 /*   By: snicolet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 18:49:44 by snicolet          #+#    #+#             */
-/*   Updated: 2018/05/02 01:01:22 by snicolet         ###   ########.fr       */
+/*   Updated: 2018/05/03 15:59:28 by snicolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char			*ft_strdup(const char *src);
 char			*ft_strcpy(char *dst, const char *src);
 void			ft_cat(const int fd);
 char			*ft_strchr(char *str, int c);
+int				ft_strcmp(const char *s1, const char *s2);
 
 #endif
