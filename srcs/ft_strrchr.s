@@ -4,7 +4,7 @@ section .text align=16
 
 ;char	*ft_strrchr(char *src, int c);
 _ft_strrchr:
-	mov r8b, rdi						; backup original src in r8
+	mov r8b, dil						; backup original src in r8
 	call _ft_strlen
 	cmp rax, 0
 	je .quit
