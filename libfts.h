@@ -6,7 +6,7 @@
 /*   By: snicolet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/30 18:49:44 by snicolet          #+#    #+#             */
-/*   Updated: 2018/05/03 19:14:18 by snicolet         ###   ########.fr       */
+/*   Updated: 2018/05/03 20:55:47 by snicolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char			*ft_strchr(char *str, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 void			*ft_memalloc(size_t size);
 char			*ft_strrchr(char *str, int c);
+void			ft_memdel(void **ptr);
 
 #endif

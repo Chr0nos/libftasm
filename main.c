@@ -152,5 +152,9 @@ int				main(void)
 	test_ft_cat();
 	ft_puts("--- BONUS PART ---");
 	test_ft_strchr();
+	// ft_strrchr
+	// ft_memalloc
+	// ft_strcmp
+	// ft_memdel
 	return (0);
 }
