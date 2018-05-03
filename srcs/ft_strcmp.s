@@ -21,7 +21,7 @@ _ft_strcmp:
 
 	.quit:
 		xor rax, rax					; reset rax
-		mov eax, r8d						; setting char 2 to value
-		sub eax, r9d						; substractif char 1 value
+		mov eax, r8d					; setting char 2 to value
+		sub eax, r9d					; substractif char 1 value
 		pop rbp
 		ret
