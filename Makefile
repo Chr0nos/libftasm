@@ -6,7 +6,7 @@
 #    By: snicolet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/14 22:57:10 by snicolet          #+#    #+#              #
-#*   Updated: 2018/05/03 21:22:43 by snicolet         ###   ########.fr       *#
+#*   Updated: 2018/05/05 01:18:27 by snicolet         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS=ft_bzero.s ft_strcat.s ft_strlen.s ft_isalpha.s ft_islower.s ft_isupper.s \
 	 ft_isdigit.s ft_isprint.s ft_toupper.s ft_tolower.s ft_strlen.s \
 	 ft_memset.s ft_memcpy.s ft_puts.s ft_strdup.s ft_strcpy.s ft_cat.s \
 	 ft_strchr.s ft_strrchr.s ft_isalnum.s ft_isascii.s ft_strcmp.s \
-	 ft_memalloc.s ft_memdel.s ft_strnew.s
+	 ft_memalloc.s ft_memdel.s ft_strnew.s ft_strncmp.s
 
 OBJS=$(SRCS:%.s=$(BUILDIR)/%.o)
 
