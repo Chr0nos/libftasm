@@ -40,13 +40,13 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 
 ## Registers
 (this is a new notation, prefer the previous one the time i finish it)
-| Size        | ret |     | counter | 1   | 2   | 3   | 4   |  -  | 5   | 6   |
+| Size        | ret |  ?  | counter | 1   | 2   | 3   | 4   |  -  | 5   | 6   |
 | :---------- | :-: | :-: | :-----: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | 64 bits     | rax | rbx | rcx     | rdi | rsi | rdx | rcx | rbp | r8  | r9  |
 | 32 bits     | eax | ebx | ecx     | edi | edi | edz | ecx  | ebp | r8d | r9d |
-| 16 bits     | ax  | bx  | cx      | di  | bp  |     | bx   | sp  | r8w | r9w |
-| 8 bits high | ah  | bh  | dh      | dih | bph |     | bh   | sph | r8h | r9h |
-| 8 bits low  | al  | bl  | dl      | dil | bpl |     | bl   | spl | r8b | r9b |
+| 16 bits     | ax  | bx  | cx      | di  | bp  |  ?  | bx   | sp  | r8w | r9w |
+| 8 bits high | ah  | bh  | dh      | dih | bph |  ?  | bh   | sph | r8h | r9h |
+| 8 bits low  | al  | bl  | dl      | dil | bpl |  ?  | bl   | spl | r8b | r9b |
 
 
 ## Keywords
