@@ -2,22 +2,18 @@ section .text align=16
 	global _ft_bzero
 
 ;             (rdi, rsi)
-;void ft_bzero(void *s, size_t n);
+;void ft_bzero(void *ptr,  size_t n);
 _ft_bzero:
 	push rbp
 	mov rbp, rsp
 
-	; creating a loop counter into rdx
-	mov rdx, 0
-	.loop:
-		cmp rdx, rsi
-		jge .quit
-		; statement: setting 0 to the address and reenter into the loop
-		mov byte[rdi + rdx], 0
-		inc rdx
-		jmp .loop
+	push rdi			; backup of ptr
+	mov rcx, rsi		; setting the size to bzero
+	mov rax, 0			; setting pattern to copy
 
-	; removing the function from the stack
-	.quit:
-		pop rbp
-		ret
+	cld
+	rep stosb			; repstring for effective copy
+	
+	pop rax				; restoring ptr
+	pop rbp
+	ret

@@ -36,4 +36,4 @@ _ft_strdup:
 		pop r15
 		pop r12
 		pop rbp
-		r5
+		ret
