@@ -137,6 +137,27 @@ static void		test_ft_strchr(void)
 	printf("test1: %s\n", ptr);
 }
 
+static void		test_ft_strrchr(void)
+{
+	const char	*str = "!!! it will not fail ! i found the good solution.";
+
+	ft_puts("testing ft_strrchr...");
+	ft_puts(ft_strrchr((char*)(size_t)str, '!'));
+}
+
+static void		test_ft_strcmp(void)
+{
+	char		s1[100];
+	char		s2[100];
+
+	ft_puts("testing ft_strcmp...");
+	strcpy(s1, "something that does not match");
+	strcpy(s2, "somethign else");
+	printf("test0: %s\n", (ft_strcmp(s1, s2) == 0) ? "failed" : "success");
+	strcpy(s2, s1);
+	printf("test1: %s\n", (ft_strcmp(s1, s2) != 0) ? "failed" : "success");
+}
+
 int				main(void)
 {
 	test_ft_bzero();
@@ -152,9 +173,9 @@ int				main(void)
 	test_ft_cat();
 	ft_puts("--- BONUS PART ---");
 	test_ft_strchr();
-	// ft_strrchr
+	test_ft_strrchr();
 	// ft_memalloc
-	// ft_strcmp
+	test_ft_strcmp();
 	// ft_memdel
 	return (0);
 }
