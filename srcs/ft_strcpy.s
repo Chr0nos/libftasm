@@ -30,13 +30,15 @@ section .text align=16
 _ft_strcpy:
 	push rbp
 	mov rbp, rsp
+	push r12
+	push r15
 
 	; size_t ft_strlen(const char *src);
-	mov r8, rdi			; backup of dest
+	mov r12, rdi		; backup of dest
 	mov rdi, rsi		; setting src as dest
 	call _ft_strlen		; calling ft_strlen
 	mov r15, rax		; storing the len in r15
-	mov rdi, r8			; restoring rdi (for ft_memcpy call)
+	mov rdi, r12		; restoring rdi (for ft_memcpy call)
 
 	;void *ft_memcpy(void *dest, const void *src, size_t size);
 	mov rdx, rax
@@ -44,6 +46,8 @@ _ft_strcpy:
 	call _ft_memcpy				; copy the string
 
 	.quit:
+		pop r15
+		pop r12
 		;rax is already on dest
 		pop rbp
 		ret

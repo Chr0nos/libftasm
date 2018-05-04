@@ -6,26 +6,27 @@ section .text align=16
 _ft_strchr:
 	push rbp
 	mov rbp, rsp
-	mov r8, 0							; creating a counter in r8
+	push r12
+	mov r12, 0							; creating a counter in r12
 
 	.loop:
-		mov r15b, byte[rdi + r8]		; reading a byte at str[i]
+		mov r15b, byte[rdi + r12]		; reading a byte at str[i]
 		cmp r15b, 0						; checking of the current char is \0
 		je .loopend
 		cmp r15b, sil
 		je .charfound
-		inc r8							; incrementing the pos counter
+		inc r12							; incrementing the pos counter
 		jmp .loop						; loop again
 
 	.charfound:
-		add rdi, r8
+		add rdi, r12
 		mov rax, rdi
 		jmp .quit
 
 	.loopend:
 		cmp r15b, sil					; check if the end == c
 		jne .notfound					; if not, we quit with NULL
-		add rdi, r8						; adding counter value to str ptr
+		add rdi, r12					; adding counter value to str ptr
 		mov rax, rdi					; setting str to rax
 		jmp .quit
 
@@ -33,5 +34,6 @@ _ft_strchr:
 		mov rax, 0
 
 	.quit:
+		pop r12
 		pop rbp
 		ret

@@ -15,6 +15,8 @@ section .text align=16
 _ft_puts:
 	push rbp
 	mov rbp, rsp
+	push r12
+
 	; protecton against NULL
 	cmp rdi, 0
 	jne .valid
@@ -25,14 +27,14 @@ _ft_puts:
 		.len:
 			call _ft_strlen
 			push rax
-			mov r8, rax
+			mov r12, rax
 
 		.write:
 			;ssize_t write(int fd, const void *src, size_t size);
 			mov rax, SYSCALL(WRITE)
 			mov rdi, STDOUT
 			mov rsi, r15
-			mov rdx, r8
+			mov rdx, r12
 			syscall
 
 		.newline:
@@ -40,8 +42,10 @@ _ft_puts:
 			lea rsi, [rel eol]
 			mov rdx, 1
 			syscall
+		
+		pop rax
 
 	.quit:
-		pop rax
+		pop r12
 		pop rbp
 		ret

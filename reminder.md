@@ -49,6 +49,7 @@ to perform a syscall the address of systemcall has to be set into "rax" register
 | 8 bits high | ah  | bh  | dh      | dih | bph |  ?  | bh  | sph | r8h | r9h |
 | 8 bits low  | al  | bl  | dl      | dil | bpl |  ?  | bl  | spl | r8b | r9b |
 
+after r15, parameter of functions are sent to the stack
 
 ## Keywords
 |   Word   | Sigification                                                      |
@@ -112,3 +113,6 @@ https://stackoverflow.com/questions/43769467/x86-assembly-pointers
 
 ### Basics notions
 http://beta.hackndo.com/assembleur-notions-de-base/
+
+### Registers protection
+https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf

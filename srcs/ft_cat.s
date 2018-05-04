@@ -16,16 +16,18 @@ section .text align=16
 _ft_cat:
 	push rbp
 	mov rbp, rsp
+	push r12
+	push r15
 
 	cmp rdi, NEGBIT				; if fd < 0 : quit
 	jge .quit
-	mov r8, rdi					; storing fd in r8
+	mov r12, rdi					; storing fd in r12
 
 	; event is the case of a valid fd
 	.event:
 		; ssize_t read(int fd, void * ptr, size_t size);
 		mov rax, SYSCALL(READ)	; setting read as syscall
-		mov rdi, r8				; reading on fd
+		mov rdi, r12			; reading on fd
 		lea rsi, [rel buffer]	; setting the buffer as target
 		mov rdx, BUFF_SIZE		; setting buffer size
 		syscall
@@ -45,5 +47,7 @@ _ft_cat:
 		jmp .event				; do the new read/write event.
 
 	.quit:
+		pop r15
+		pop r12
 		pop rbp
 		ret

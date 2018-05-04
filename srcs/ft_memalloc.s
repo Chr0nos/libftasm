@@ -3,26 +3,22 @@ section .text align=16
 	extern _malloc
 	extern _ft_bzero
 
-;                    rdi (r8)
+;                    rdi (r15)
 ;void *ft_memalloc(size_t size);
 _ft_memalloc:
 	push rbp
 	mov rbp, rsp
 
-	; void *malloc(size_t)
-	call _malloc			; malloc with size
-	cmp rax, 0				; check for NULL ptr
+	call _malloc
+	push rax
+	cmp rax, 0
 	je .quit
-	mov r8, rax				; r8 = ptr
-	mov r15, rdi			; r15 = size
 
-	;			rdi			rsi
-	; bzero(void *ptr, size_t size);
-	mov rdi, r8				; ptr
-	mov rsi, r15			; size
+	mov rdi, rax
+	mov rsi, rdi
 	call _ft_bzero
 
-;	mov rax, r8		; return ptr
 	.quit:
+		pop rax
 		pop rbp
 		ret
