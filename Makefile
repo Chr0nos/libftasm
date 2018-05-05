@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libftasm.a
+NAME=libfts.a
 BUILDIR=./build
 SRCDIR=./srcs/
 ARCH=macho64
